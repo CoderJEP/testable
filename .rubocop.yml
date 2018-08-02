@@ -1,0 +1,110 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'Gemfile'
+
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+    
+Metrics/AbcSize:
+  Max: 100
+
+Metrics/BlockLength:
+  Max: 250
+
+Metrics/ClassLength:
+  Max: 1000
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/LineLength:
+  Max: 2000
+
+Metrics/MethodLength:
+  Max: 250
+
+Metrics/ModuleLength:
+  Max: 100
+
+Metrics/PerceivedComplexity:
+  Max: 20
+    
+# retained for rspec
+Style/AlignHash:
+  Enabled: true
+  
+Style/AlignParameters:
+  Enabled: true
+  EnforcedStyle: with_first_parameter
+  
+Style/BracesAroundHashParameters:
+  Enabled: true
+  EnforcedStyle: braces
+  
+Style/EachForSimpleLoop:
+  Enabled: true
+  
+Style/HashSyntax:
+  EnforcedStyle: 'hash_rockets'
+  Exclude:
+    - 'Gemfile'
+     
+Style/IndentationWidth:
+  Enabled: true
+  # Number of spaces for each indentation level.
+  Width: 2
+  
+Style/MethodMissing:
+  Enabled: true
+  
+Style/MultilineArrayBraceLayout:
+  Enabled: true
+  EnforcedStyle: 'new_line'
+  
+Style/MultilineHashBraceLayout:
+  Enabled: true
+  EnforcedStyle: 'new_line'
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+  PreferredDelimiters:
+    default: ()
+  
+Style/SpecialGlobalVars:
+  EnforcedStyle: use_perl_names
+  
+Style/SymbolArray:
+  EnforcedStyle: brackets
+  
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+  
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+  
+Style/WordArray:
+  EnforcedStyle: percent
+  MinSize: 7
+  
+# Disabled Cops
+Lint/UnreachableCode:
+ Enabled: false
+    
+Style/NilComparison:
+  Enabled: false
+  
+Style/RegexpLiteral:
+  Enabled: false
+  
+# These cops don't play well with Rubymine auto formatting. 
+# If it looks good push it.
+Style/FirstParameterIndentation:
+  Enabled: false
+  
+Style/IndentHash:
+  Enabled: false
+  
+Style/MultilineMethodCallIndentation:
+  Enabled: false
