@@ -47,7 +47,7 @@ Style/EachForSimpleLoop:
   Enabled: true
   
 Style/HashSyntax:
-  EnforcedStyle: 'hash_rockets'
+  EnforcedStyle: 'ruby19'
   Exclude:
     - 'Gemfile'
      
@@ -96,6 +96,9 @@ Style/NilComparison:
   Enabled: false
   
 Style/RegexpLiteral:
+  Enabled: false
+  
+Style/Documentation:
   Enabled: false
   
 # These cops don't play well with Rubymine auto formatting. 
