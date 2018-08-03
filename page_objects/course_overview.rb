@@ -1,10 +1,20 @@
 # frozen_string_literal: true
-require_relative 'base_page'
+require_relative 'page_object_helper'
+
+include Capybara::DSL
 
 module PageObjects
-  class CourseOverview < BasePage
+  class CourseOverview
+    def self.enrollment_button
+      find('#enroll-button-top')
+    end
+
     def self.enroll
-      raise 'CourseOverview::enroll() is not defined'
+      enrollment_button.click
+    end
+
+    def self.enrollment_cost
+      enrollment_button.text.downcase.split(' ').last
     end
   end
 end

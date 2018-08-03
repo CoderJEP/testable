@@ -1,10 +1,16 @@
 # frozen_string_literal: true
-require_relative 'base_page'
+require_relative 'page_object_helper'
+
+include Capybara::DSL
 
 module PageObjects
-  class Home < BasePage
+  class Home
+    def self.go
+      visit 'http://takehome.zeachable.com'
+    end
+
     def self.enroll
-      raise 'Home::enroll() is not defined'
+      click_link 'Enroll Now'
     end
   end
 end

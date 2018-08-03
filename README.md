@@ -26,3 +26,20 @@ bundle install
 * [takehome.zeachable.com](http://takehome.zeachable.com)
 
 Feel free to reach out if you have any questions!
+
+## Execution
+```
+bundle exec rspec ./spec/features/test_spec.rb
+```
+
+## Style Guide Enforcement
+This repo uses Rubocop and Overcommit to enforce a basic Ruby Style Guide. Rubocop will be run against modified lines on every commit attempt. 
+
+**Setup overcommit locally:**
+```
+ bundle exec overcommit --install
+ ```
+**To execute overcommit manually:**
+```
+ .git/hooks/pre-commit
+ ```
