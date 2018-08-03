@@ -5,22 +5,30 @@ include Capybara::DSL
 
 module PageObjects
   class Lecture
-    def self.wait_for_ready(lecture_name, expected_percent_complete)
-      find('.next-lecture').has_content?(lecture_name)
+    NEXT       = '.next-lecture'
+    PERCENTAGE = '.percentage'
+    TEXTS      = '.lecture-text-container'
+    PDFS       = '.attachment-pdf-embed'
+    VIDEOS     = '.wistia_embed'
+    DOWNLOADS  = '.download'
+    COMPLETE   = '#lecture_complete_button'
 
-      find('.percentage').has_content?(expected_percent_complete)
+    def self.wait_for_ready(lecture_name, expected_percent_complete)
+      find(NEXT).has_content?(lecture_name)
+
+      find(PERCENTAGE).has_content?(expected_percent_complete)
     end
 
     def self.percent_complete
-      find('.percentage').text
+      find(PERCENTAGE).text
     end
 
     # TODO: This should be methods to return the information. Since we are not asserting it yet, let's just print for debugging.
     def self.print_content(lecture_index, lecture_name)
-      text      = all('.lecture-text-container').map(&:text)
-      pdfs      = all('.attachment-pdf-embed')
-      videos    = all('.wistia_embed')
-      downloads = all('.download')
+      text      = all(TEXTS).map(&:text)
+      pdfs      = all(PDFS)
+      videos    = all(VIDEOS)
+      downloads = all(DOWNLOADS)
 
       puts '---------------------------------'
       puts "Lecture #{lecture_index} `#{lecture_name}` contains:"
@@ -32,7 +40,7 @@ module PageObjects
     end
 
     def self.next
-      find('#lecture_complete_button').click
+      find(COMPLETE).click
     end
   end
 end

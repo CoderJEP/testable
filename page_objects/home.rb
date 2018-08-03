@@ -5,12 +5,15 @@ include Capybara::DSL
 
 module PageObjects
   class Home
+    URL    = 'http://takehome.zeachable.com'
+    ENROLL = 'Enroll Now'
+
     def self.go
-      visit 'http://takehome.zeachable.com'
+      visit URL
     end
 
     def self.enroll
-      click_link 'Enroll Now'
+      click_link ENROLL
     end
   end
 end

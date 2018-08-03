@@ -30,7 +30,7 @@ describe 'testable ete test' do
     puts 'User:'
     puts @user
     puts "---------------------------------\n"
-    SiteEnrollment.signup(@user)
+    SiteEnrollment.sign_up(@user)
 
     COURSES.each do |course_name|
       Courses.view_course(course_name)

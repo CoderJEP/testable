@@ -5,16 +5,14 @@ include Capybara::DSL
 
 module PageObjects
   class CourseOverview
-    def self.enrollment_button
-      find('#enroll-button-top')
-    end
+    ENROLLMENT = '#enroll-button-top'
 
     def self.enroll
-      enrollment_button.click
+      find(ENROLLMENT).click
     end
 
     def self.enrollment_cost
-      enrollment_button.text.downcase.split(' ').last
+      find(ENROLLMENT).text.downcase.split(' ').last
     end
   end
 end
